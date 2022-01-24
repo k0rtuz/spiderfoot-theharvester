@@ -72,7 +72,7 @@ class sfp_tool_theharvester(SpiderFootPlugin):
             self.opts[opt] = userOpts[opt]
 
         self._base_url = f'http://{self.opts["th_host"]}:{str(self.opts["th_port"])}'
-        for token in self.opts['th_sources'].strip().split(' '):
+        for token in self.opts['th_sources'].strip().split(','):
             source = token.strip()
             if len(source) > 0:
                 self._th_sources.append(source)
